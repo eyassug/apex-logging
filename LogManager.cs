@@ -8,6 +8,7 @@ namespace HCMIS.Logging
 {
     public static class LogManager
     {
+        #region Methods
         public static IActivityLog GetActivityLogger()
         {
             IActivityLog logger = new ActivityLogger();
@@ -31,5 +32,9 @@ namespace HCMIS.Logging
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
+
     }
 }

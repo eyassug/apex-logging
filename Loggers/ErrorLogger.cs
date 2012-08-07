@@ -18,7 +18,7 @@ namespace HCMIS.Logging.Loggers
                               AppVersion = appVersion.ToString(),
                               DbVersion = dbVersion.ToString(),
                               Page = page,
-                              ErrorLevel = (ErrorLevel)errorLevel,
+                              ErrorLevel = errorLevel,
                               Exception = exception.Message,
                           };
             Repository.Add(log);

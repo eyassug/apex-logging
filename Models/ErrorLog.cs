@@ -11,19 +11,10 @@ namespace HCMIS.Logging.Models
     {
         public string AppVersion { get; set; }
         public string DbVersion { get; set; }
-        public ErrorLevel ErrorLevel { get; set; }
+        public int ErrorLevel { get; set; }
         public string Page { get; set; }
         public string Activity { get; set; }
         public string Exception { get; set; }
 
-    }
-
-    public enum ErrorLevel
-    {
-        Low,
-        Medium,
-        High,
-        Critical,
-        Fatal
     }
 }
