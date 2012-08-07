@@ -61,7 +61,6 @@
     <Compile Include="Models\ProfileLog.cs" />
     <Compile Include="Models\SessionLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\ActivityLogRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\LogRepository.cs" />
