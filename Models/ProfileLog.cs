@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HCMIS.Logging.Models
 {
-    [Table("ProfileLogs")]
+    [Table("ProfileLog")]
     public class ProfileLog : Log
     {
         public string Page { get; set; }

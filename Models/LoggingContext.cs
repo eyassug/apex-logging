@@ -18,6 +18,12 @@ namespace HCMIS.Logging.Models
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Log>().ToTable("dbo.Log");
+            base.OnModelCreating(modelBuilder);
+        }
+        
         public DbSet<Log> Logs { get; set; }
     }
 }

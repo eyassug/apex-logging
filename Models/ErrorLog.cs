@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HCMIS.Logging.Models
 {
-    [Table("ErrorLogs")]
+    [Table("ErrorLog")]
     public class ErrorLog : Log
     {
         public string AppVersion { get; set; }

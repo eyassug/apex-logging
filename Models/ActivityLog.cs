@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HCMIS.Logging.Models
 {
-    [Table("ActivityLogs")]
+    [Table("ActivityLog")]
     public class ActivityLog : Log
     {
         public int ActivityID { get; set; }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HCMIS.Logging.Models
 {
-    [Table("SessionLogs")]
+    [Table("SessionLog")]
     public class SessionLog : Log
     {
         public DateTime LoginTime { get; set; }
