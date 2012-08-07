@@ -52,6 +52,7 @@
     <Compile Include="IProfiler.cs" />
     <Compile Include="ISessionLog.cs" />
     <Compile Include="Loggers\ActivityLogger.cs" />
+    <Compile Include="Loggers\ErrorLogger.cs" />
     <Compile Include="Loggers\LoggerBase.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="Models\ActivityLog.cs" />

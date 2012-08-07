@@ -17,7 +17,9 @@ namespace HCMIS.Logging
 
         public static IErrorLog GetErrorLogger()
         {
-            throw new NotImplementedException();
+            IErrorLog logger = new ErrorLogger();
+            logger.Setup(new object());
+            return logger;
         }
 
         public static ISessionLog GetSessionLogger()
