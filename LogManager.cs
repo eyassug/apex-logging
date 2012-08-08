@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using HCMIS.Logging.Loggers;
+using HCMIS.Logging.Models;
 
 namespace HCMIS.Logging
 {
     public static class LogManager
     {
         #region Fields
-        private static string _connectionString="LoggingEntities";
+        private static string _connectionString="";
 
         #endregion
 
@@ -18,6 +19,18 @@ namespace HCMIS.Logging
         {
             if (String.IsNullOrEmpty(ConnectionString))
                 throw new Exception("Connection string is not set. Use LogManager.ConnectionString to set a new connection string.");
+            else
+            {
+                try
+                {
+                    var context = new LoggingContext();
+                    context.Dispose();
+                }
+                catch (Exception exception)
+                {
+                    throw new Exception("Invalid connection string or name. Try re-setting LogManager.ConnectionString.");
+                }
+            }
         }
         #endregion
 

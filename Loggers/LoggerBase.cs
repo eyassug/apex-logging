@@ -12,6 +12,7 @@ namespace HCMIS.Logging.Loggers
 
         public LoggerBase()
         {
+            Setup(LogManager.ConnectionString);
             this._repository = new LogRepository();
         }
 
