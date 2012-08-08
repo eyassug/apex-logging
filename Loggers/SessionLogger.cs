@@ -9,31 +9,28 @@ namespace HCMIS.Logging.Loggers
     class SessionLogger : LoggerBase, ISessionLog
     {
 
-        public void Login(int userId, DateTime loginDate)
+        public Guid Login(int userId)
         {
-            SessionLog session = new SessionLog
-            {
-                UserID = userId,
-                TimeStamp = DateTime.Now,
-            };
+            var session = new SessionLog
+                              {
+                                  UserID = userId,
+                                  SessionID = Guid.NewGuid(),
+                                  TimeStamp = DateTime.Now
+                              };
             Repository.Add(session);
+            return session.SessionID;
         }
 
         public void KeepAlive(int userId, DateTime time)
         {
-           // what is this method supposed to do
             throw new NotImplementedException();
         }
 
-        public void Logout(int userId, DateTime logoutTime, int logoutType)
+        public void Logout(Guid sessionID)
         {
-            var sessions = Repository.FindByType<SessionLog>(s => s.UserID == userId);
-            foreach (SessionLog session in sessions)
-            {   
-               session.EndTime = logoutTime;
-               Repository.Update(session);
-            }
-            
+            var session = Repository.FindByType<SessionLog>(s => s.SessionID == sessionID).Single();
+            session.EndTime = DateTime.Now;
+            Repository.Update(session);
         }
     }
 }
