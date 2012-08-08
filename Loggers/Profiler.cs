@@ -16,12 +16,10 @@ namespace HCMIS.Logging.Loggers
                 Page = page,
                 Action = action,
             };
-            Type profileType = typeof(ProfileLog);
-            Guid profileGuid = (Guid)profileType.GUID;
-            log.OperationID = profileGuid;
+            log.OperationID = Guid.NewGuid();
             log.TimeStamp = DateTime.Now;
             Repository.Add(log);
-            return profileGuid;
+            return log.OperationID;
         }
 
         public void EndOperation(Guid operationId)
