@@ -11,12 +11,12 @@ namespace HCMIS.Logging.Loggers
 
         public Guid Login(int userId)
         {
-            SessionLog session = new SessionLog
-            {
-                UserID = userId
-            };
-            session.SessionID = Guid.NewGuid();
-            session.TimeStamp = DateTime.Now;
+            var session = new SessionLog
+                              {
+                                  UserID = userId,
+                                  SessionID = Guid.NewGuid(),
+                                  TimeStamp = DateTime.Now
+                              };
             Repository.Add(session);
             return session.SessionID;
         }

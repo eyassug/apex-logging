@@ -10,14 +10,14 @@ namespace HCMIS.Logging.Loggers
     {
         public Guid StartOperation(int userId, string page, string action)
         {            
-            ProfileLog log = new ProfileLog
-            {
-                UserID = userId,
-                Page = page,
-                Action = action,
-            };
-            log.OperationID = Guid.NewGuid();
-            log.TimeStamp = DateTime.Now;
+            var log = new ProfileLog
+                          {
+                              UserID = userId,
+                              Page = page,
+                              Action = action,
+                              OperationID = Guid.NewGuid(),
+                              TimeStamp = DateTime.Now,
+                          };
             Repository.Add(log);
             return log.OperationID;
         }
