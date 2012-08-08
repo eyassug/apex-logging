@@ -22,13 +22,18 @@ namespace HCMIS.Logging.Loggers
         public void KeepAlive(int userId, DateTime time)
         {
            // what is this method supposed to do
+            throw new NotImplementedException();
         }
 
         public void Logout(int userId, DateTime logoutTime, int logoutType)
         {
-            var session = Repository.FindByType<SessionLog>(s => s.UserID == userId).Single();
-            session.EndTime = logoutTime;
-            Repository.Update(session);
+            var sessions = Repository.FindByType<SessionLog>(s => s.UserID == userId);
+            foreach (SessionLog session in sessions)
+            {   
+               session.EndTime = logoutTime;
+               Repository.Update(session);
+            }
+            
         }
     }
 }
