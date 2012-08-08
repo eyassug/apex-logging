@@ -10,6 +10,6 @@ namespace HCMIS.Logging.Models
     public class SessionLog : Log
     {
         public Guid SessionID { get; set; }
-        public DateTime EndTime { get; set; }
+        public DateTime? EndTime { get; set; }
     }
 }
