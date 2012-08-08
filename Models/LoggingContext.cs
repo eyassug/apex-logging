@@ -9,7 +9,7 @@ namespace HCMIS.Logging.Models
     public class LoggingContext : DbContext
     {
         public LoggingContext()
-            : base("name=LoggingEntities")
+            : base(LogManager.ConnectionString)
         {
         }
 
