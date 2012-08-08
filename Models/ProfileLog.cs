@@ -12,7 +12,6 @@ namespace HCMIS.Logging.Models
         public string Page { get; set; }
         public string Action { get; set; }
         public Guid OperationID { get; set; }
-        public DateTime StartTime { get; set; }
         public DateTime? EndTime { get; set; }
     }
 }

@@ -8,24 +8,16 @@ namespace HCMIS.Logging.Repository
 {
     public class LogRepository:GenericRepository<LoggingContext,Log>
     {
-        public IQueryable<ActivityLog> GetAllActivityLogs()
+        /// <summary>
+        /// Gets a list of a specific type of Log 
+        /// </summary>
+        /// <typeparam name="TType">ActivityLog, ErrorLog, ProfileLog, SessionLog</typeparam>
+        /// <param name="predicate">Lambda expression</param>
+        /// <returns></returns>
+        public IQueryable<TType> FindByType<TType>(System.Linq.Expressions.Expression<Func<TType, bool>> predicate) where TType : Log
         {
-            return Context.Logs.OfType<ActivityLog>();
-        }
-
-        public IQueryable<ErrorLog> GetAllErrorLogs()
-        {
-            return Context.Logs.OfType<ErrorLog>();
-        }
-
-        public IQueryable<SessionLog> GetAllSessionLogs()
-        {
-            return Context.Logs.OfType<SessionLog>();
-        }
-
-        public IQueryable<ProfileLog> GetAllProfileLogs()
-        {
-            return Context.Logs.OfType<ProfileLog>();
+            var query = Context.Logs.OfType<TType>().Where(predicate);
+            return query;
         }
     }
 }
