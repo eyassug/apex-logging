@@ -25,12 +25,16 @@ namespace HCMIS.Logging
 
         public static ISessionLog GetSessionLogger()
         {
-            throw new NotImplementedException();
+            ISessionLog logger = new SessionLogger();
+            logger.Setup(new object());
+            return logger;
         }
 
         public static IProfiler GetProfilerLogger()
         {
-            throw new NotImplementedException();
+            IProfiler logger = new Profiler();
+            logger.Setup(new object());
+            return logger;
         }
 
         #endregion
