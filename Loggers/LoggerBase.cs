@@ -15,8 +15,9 @@ namespace HCMIS.Logging.Loggers
             this._repository = new LogRepository();
         }
 
-        public void Setup(object obj)
+        public void Setup(string connectionString)
         {
+            LogManager.ConnectionString = connectionString;
             this._repository = new LogRepository();
         }
 

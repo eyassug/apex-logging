@@ -7,6 +7,6 @@ namespace HCMIS.Logging
 {
     public interface ILog
     {
-        void Setup(object obj);
+        void Setup(string connectionString);
     }
 }

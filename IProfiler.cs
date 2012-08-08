@@ -5,9 +5,8 @@ using System.Text;
 
 namespace HCMIS.Logging
 {
-    public interface IProfiler
+    public interface IProfiler:ILog
     {
-        void Setup(Object obj);
         Guid StartOperation(int userId, string page , string action);
         void EndOperation(Guid operationId);
     }
