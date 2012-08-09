@@ -12,9 +12,21 @@ namespace HCMIS.Logging.Models
         public string AppVersion { get; set; }
         public string DbVersion { get; set; }
         public int ErrorLevel { get; set; }
-        public string Page { get; set; }
+        public string Form { get; set; }
         public string Activity { get; set; }
         public string Exception { get; set; }
+
+        public int LineNumber { get; set; }
+        public string ExceptionType { get; set; }
+        public string Message { get; set; }
+        public string Method { get; set; }
+        public string File { get; set; }
+
+        public DateTime Date { get; set; }
+        public int IPAddress { get; set; }
+        public int VPNIP { get; set; }
+        public string WareHouse { get; set; }
+
 
     }
 }
