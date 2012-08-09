@@ -17,11 +17,18 @@ namespace HCMIS.Logging.Loggers
                               Activity = activity,
                               AppVersion = appVersion.ToString(),
                               DbVersion = dbVersion.ToString(),
-                              Page = page,
+                              Form = page,
                               ErrorLevel = errorLevel,
-                              Exception = exception.Message,
+                              Exception = Convert.ToString(exception),
+                              File = exception.Source,
+                              Method = Convert.ToString(exception.TargetSite),
+                              Message = exception.Message,
+                              ExceptionType = Convert.ToString(exception.GetType())
+
+
                           };
             Repository.Add(log);
         }
+        
     }
 }
