@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="IActivityLog.cs" />
     <Compile Include="IErrorLog.cs" />
     <Compile Include="ILog.cs" />

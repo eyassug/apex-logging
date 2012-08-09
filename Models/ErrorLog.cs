@@ -23,7 +23,7 @@ namespace HCMIS.Logging.Models
         public string File { get; set; }
 
         public DateTime Date { get; set; }
-        public int IPAddress { get; set; }
+        public string IPAddress { get; set; }
         public int VPNIP { get; set; }
         public string WareHouse { get; set; }
 
