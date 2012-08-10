@@ -23,6 +23,7 @@ namespace HCMIS.Logging.Loggers
                               Exception = Convert.ToString(exception),
                               File = exception.Source,
                               Method = Convert.ToString(exception.TargetSite),
+                              LineNumber = Helper.GetLineNumber(exception),
                               Message = exception.Message,
                               ExceptionType = Convert.ToString(exception.GetType()),
                               IPAddress = Helper.GetIP(),
