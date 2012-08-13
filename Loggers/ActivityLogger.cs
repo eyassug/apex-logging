@@ -8,6 +8,11 @@ namespace HCMIS.Logging.Loggers
 {
     public class ActivityLogger : LoggerBase, IActivityLog
     {
+        private string _className;
+        public ActivityLogger(object obj):base()
+        {
+            this._className = obj.GetType().Name;
+        }
         public void SaveAction(int userId, int activityId, string page, string activityName)
         {
             var log = new ActivityLog
@@ -16,7 +21,8 @@ namespace HCMIS.Logging.Loggers
                                       ActivityID = activityId,
                                       Page = page,
                                       ActivityName = activityName,
-                                      TimeStamp = DateTime.Now
+                                      TimeStamp = DateTime.Now,
+                                      ClassName = this._className
                                   };
             Repository.Add(log);
         }

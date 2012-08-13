@@ -12,5 +12,6 @@ namespace HCMIS.Logging.Models
         public int ActivityID { get; set; }
         public string Page { get; set; }
         public string ActivityName { get; set; }
+        public string ClassName { get; set; }
     }
 }
