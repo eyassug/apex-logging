@@ -9,6 +9,10 @@ namespace HCMIS.Logging.Helpers
 {
     class Helper
     {
+        /// <summary>
+        /// Gets the IP address of the local machine where the app is running.
+        /// </summary>
+        /// <returns></returns>
         public static string GetIP()
         {
             string strHostName = "";
@@ -21,6 +25,11 @@ namespace HCMIS.Logging.Helpers
             return addr[addr.Length - 2].ToString();
         }
 
+        /// <summary>
+        /// Gets the line number that raised the exception
+        /// </summary>
+        /// <param name="ex">Exception</param>
+        /// <returns></returns>
         public static int GetLineNumber(Exception ex)
         {
             var st = new StackTrace(ex, true);

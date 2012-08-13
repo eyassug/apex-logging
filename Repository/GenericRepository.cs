@@ -27,7 +27,7 @@ namespace HCMIS.Logging.Repository
             IQueryable<TEntity> query = _entities.Set<TEntity>().Where(predicate);
             return query;
         }
-
+        
         public virtual void Add(TEntity entity)
         {
             _entities.Set<TEntity>().Add(entity);

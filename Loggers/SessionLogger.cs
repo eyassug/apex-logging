@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HCMIS.Logging.Helpers;
 using HCMIS.Logging.Models;
 
 namespace HCMIS.Logging.Loggers
@@ -15,7 +16,8 @@ namespace HCMIS.Logging.Loggers
                               {
                                   UserID = userId,
                                   SessionID = Guid.NewGuid(),
-                                  TimeStamp = DateTime.Now
+                                  TimeStamp = DateTime.Now,
+                                  IPAddress = Helper.GetIP()
                               };
             Repository.Add(session);
             return session.SessionID;

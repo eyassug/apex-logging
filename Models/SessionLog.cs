@@ -12,8 +12,8 @@ namespace HCMIS.Logging.Models
         public Guid SessionID { get; set; }
         public DateTime? EndTime { get; set; }
 
-        public int IPAddress { get; set; }
-        public int VPNIP { get; set; }
+        public string IPAddress { get; set; }
+        public string VPNIP { get; set; }
 
     }
 }
