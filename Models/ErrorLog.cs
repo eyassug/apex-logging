@@ -15,6 +15,7 @@ namespace HCMIS.Logging.Models
         public string Form { get; set; }
         public string Activity { get; set; }
         public string Exception { get; set; }
+        public string StackTrace { get; set; }
 
         public int LineNumber { get; set; }
         public string ExceptionType { get; set; }

@@ -21,6 +21,7 @@ namespace HCMIS.Logging.Loggers
                               Form = page,
                               ErrorLevel = errorLevel,
                               Exception = Convert.ToString(exception),
+                              StackTrace = Convert.ToString(exception.StackTrace),
                               File = exception.Source,
                               Method = Convert.ToString(exception.TargetSite),
                               LineNumber = Helper.GetLineNumber(exception),
