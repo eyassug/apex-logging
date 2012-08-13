@@ -35,10 +35,10 @@ namespace HCMIS.Logging
         #endregion
 
         #region Methods
-        public static IActivityLog GetActivityLogger()
+        public static IActivityLog GetActivityLogger(object page)
         {
             CheckIfConnectionStringExists();
-            IActivityLog logger = new ActivityLogger();
+            IActivityLog logger = new ActivityLogger(page);
             return logger;
         }
 
